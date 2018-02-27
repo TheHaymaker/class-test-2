@@ -1,0 +1,32 @@
+.square {
+  position: relative;
+  width: 50%;
+  height: 400px;
+  background-color: lightblue;
+}
+
+.circle {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  border-radius: 0%;
+  transform: scale(1) rotate(0deg);
+  transition: 1s all cubic-bezier(0.74, 0.07, 0.35, 0.98),
+              1s top cubic-bezier(0.74, 0.07, 0.35, 0.98),
+              1s left cubic-bezier(0.74, 0.07, 0.35, 0.98) 1s,
+              1s width cubic-bezier(0.74, 0.07, 0.35, 0.98) 2s,
+              1s height cubic-bezier(0.74, 0.07, 0.35, 0.98) 2s;
+}
+
+.circle.active {
+  top: 0px;
+  left: 0px;
+  height: 200px;
+  width: 200px;
+  transform: scale(2) rotate(360deg);
+}

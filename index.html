@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My cool website</title>
+  <!-- styles.css -->
+  <!-- <link rel="stylesheet" href="styles2.css"> -->
+  <style>
+  .square {
+    position: relative;
+    width: 50%;
+    height: 400px;
+    background-color: lightblue;
+  }
+
+  .circle {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    height: 100px;
+    width: 77px;
+    background-image: url('monster.png');
+    border-radius: 0%;
+    background-size: 992.4%;
+    background-repeat: no-repeat;
+    background-position: 0%, center;
+  }
+
+  .circle.active {
+    -webkit-animation: grow 0.5s steps(9) infinite;
+      animation: grow 0.5s steps(9) infinite;
+  }
+
+  @keyframes grow {
+    0% {
+      background-position: 0%, center;
+    }
+    100% {
+      background-position: 100%, center;
+    }
+
+  }
+
+
+</style>
+</head>
+<body>
+
+  <div class="square">
+    <div class="circle"></div>
+  </div>
+
+  <script>
+    var circ = document.querySelector('.circle');
+    circ.addEventListener('click', function(){
+      var status = circ.classList.contains('active');
+
+      if(status) {
+        circ.classList.remove('active');
+      } else {
+        circ.classList.add('active');
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
